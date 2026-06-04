@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: #fbfdf9;
+  color: #17231f;
+}
+
+::selection {
+  background: #f1b73b;
+  color: #073b2a;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise-in {
+    animation: rise-in 650ms ease both;
+  }
+
+  .fade-in {
+    animation: fade-in 700ms ease both;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.river-pattern {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(241, 183, 59, 0.26), transparent 24%),
+    linear-gradient(135deg, rgba(31, 122, 140, 0.95), rgba(15, 107, 63, 0.94)),
+    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 18px);
+}
+
+.field-focus {
+  @apply focus:border-bayelsa-river focus:outline-none focus:ring-4 focus:ring-bayelsa-river/15;
+}
