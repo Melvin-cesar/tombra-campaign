@@ -1,9 +1,20 @@
 import { ConsentField, SelectField, TextAreaField, TextField } from "@/components/FormFields";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
 import { issueCategories } from "@/lib/content";
 
-const lgas = ["Sagbama", "Ekeremor"];
+const lgas = [
+  {
+    name: "Sagbama",
+    imageSrc: "/campaign/community-walk.jpg",
+    imageAlt: "Tombra Mohammed walking through a community with supporters",
+  },
+  {
+    name: "Ekeremor",
+    imageSrc: "/campaign/campaign-team-banner.jpg",
+    imageAlt: "Tombra Mohammed with campaign supporters holding a YPP banner",
+  },
+];
 
 export default function CommunityPage() {
   return (
@@ -18,23 +29,26 @@ export default function CommunityPage() {
           {lgas.map((lga) => (
             <article
               className="rounded-lg border border-bayelsa-deep/10 bg-white p-5 shadow-sm"
-              key={lga}
+              key={lga.name}
             >
-              <PlaceholderImage
-                title={`${lga} community photos`}
-                label="Replace with local ward, market, school, waterfront, and meeting photos."
+              <CampaignImage
+                alt={lga.imageAlt}
                 className="min-h-56"
+                label="Community listening, outreach, and grassroots organising."
+                src={lga.imageSrc}
+                title={`${lga.name} community focus`}
               />
               <h2 className="mt-5 text-2xl font-black text-bayelsa-deep">
-                {lga}
+                {lga.name}
               </h2>
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                To the people of {lga}: this campaign is listening for the
-                needs that affect everyday life, movement, work, education,
-                health, security, and opportunity.
+                To the people of {lga.name}: this campaign is listening for
+                the needs that affect everyday life, movement, work,
+                education, health, security, and opportunity.
               </p>
-              <div className="mt-4 rounded-md border border-dashed border-bayelsa-green/35 bg-bayelsa-palm p-4 text-sm font-semibold text-bayelsa-deep">
-                [Add verified local priorities for {lga} here]
+              <div className="mt-4 rounded-md border border-bayelsa-green/30 bg-bayelsa-palm p-4 text-sm font-semibold text-bayelsa-deep">
+                Local priorities will be collected through the listening form
+                and reviewed before being published.
               </div>
               <a
                 href="#listening-form"
@@ -60,7 +74,12 @@ export default function CommunityPage() {
           <div className="grid gap-5 md:grid-cols-2">
             <TextField label="Full name" name="fullName" required />
             <TextField label="Phone number" name="phone" type="tel" required />
-            <SelectField label="LGA" name="lga" options={lgas} required />
+            <SelectField
+              label="LGA"
+              name="lga"
+              options={lgas.map((lga) => lga.name)}
+              required
+            />
             <TextField label="Ward" name="ward" required />
             <TextField label="Community" name="community" required />
             <SelectField
