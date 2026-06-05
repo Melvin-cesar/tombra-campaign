@@ -58,6 +58,45 @@ export const newsItems = [
   },
 ];
 
+export const campaignPhotos = [
+  {
+    src: "/campaign/tombra-portrait.jpg",
+    alt: "Tombra Mohammed smiling in a bright patterned outfit",
+    title: "Tombra Mohammed",
+    label: "Official campaign portrait.",
+  },
+  {
+    src: "/campaign/campaign-team-banner.jpg",
+    alt: "Tombra Mohammed with campaign supporters holding a YPP banner",
+    title: "Campaign team",
+    label: "Supporters gather with Tombra Mohammed campaign materials.",
+  },
+  {
+    src: "/campaign/community-walk.jpg",
+    alt: "Tombra Mohammed walking through a community with supporters",
+    title: "Community walk",
+    label: "Listening and meeting people where they are.",
+  },
+  {
+    src: "/campaign/women-community-visit.jpg",
+    alt: "Tombra Mohammed smiling with women during a community visit",
+    title: "Women and community visit",
+    label: "Conversations with women and local residents.",
+  },
+  {
+    src: "/campaign/community-leaders-meeting.jpg",
+    alt: "Tombra Mohammed and supporters meeting with community leaders indoors",
+    title: "Community leaders meeting",
+    label: "Engagement with community leaders and campaign supporters.",
+  },
+  {
+    src: "/campaign/ypp-certificate.jpg",
+    alt: "Tombra Mohammed receiving a Young Progressives Party certificate",
+    title: "YPP certificate",
+    label: "Campaign documentation and party engagement.",
+  },
+];
+
 export const issueCategories = [
   "Jobs",
   "Roads",
