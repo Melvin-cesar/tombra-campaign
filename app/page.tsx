@@ -85,7 +85,7 @@ export default function HomePage() {
               Her public campaign themes include job creation, better
               leadership, women&apos;s participation, and genuine grassroots
               representation. This site will keep verified facts separate from
-              placeholders as the campaign updates its materials.
+              draft material as the campaign updates its materials.
             </p>
           </div>
         </div>
@@ -161,16 +161,29 @@ export default function HomePage() {
         <div className="grid gap-4 md:grid-cols-3">
           {newsItems.map((item) => (
             <article
-              className="rounded-lg border border-bayelsa-deep/10 bg-white p-5 shadow-sm"
+              className="overflow-hidden rounded-lg border border-bayelsa-deep/10 bg-white shadow-sm"
               key={item.title}
             >
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-bayelsa-green">
-                {item.tag}
-              </p>
-              <h3 className="mt-3 text-lg font-black leading-snug text-bayelsa-deep">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">{item.date}</p>
+              <CampaignImage
+                alt={item.imageAlt}
+                className="min-h-44 rounded-none shadow-none"
+                imageClassName="object-cover"
+                src={item.imageSrc}
+              />
+              <div className="p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-bayelsa-green">
+                  {item.tag}
+                </p>
+                <h3 className="mt-3 text-lg font-black leading-snug text-bayelsa-deep">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm font-semibold text-slate-600">
+                  {item.meta}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  {item.summary}
+                </p>
+              </div>
             </article>
           ))}
         </div>
