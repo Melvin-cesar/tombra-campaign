@@ -4,37 +4,37 @@ const voterSteps = [
   {
     title: "Check your voter registration",
     body: "Confirm your registration details early so you know your status before election season becomes crowded.",
-    link: "[INEC voter verification link]",
+    note: "Confirm through official INEC channels.",
   },
   {
     title: "Transfer your polling unit",
     body: "If you have moved, follow the official process for transfer when INEC opens the relevant window.",
-    link: "[INEC CVR link]",
+    note: "Use INEC guidance when the transfer window is open.",
   },
   {
     title: "Collect your PVC",
     body: "Your Permanent Voter Card is required for voting. Keep it safe and do not give it to anyone.",
-    link: "[INEC PVC collection information]",
+    note: "Check official PVC collection announcements before travelling.",
   },
   {
     title: "Know your polling unit",
     body: "Check your polling unit location before election day and plan how you will get there.",
-    link: "[INEC polling unit link]",
+    note: "Verify your polling unit through official voter information sources.",
   },
   {
     title: "Election day reminders",
     body: "Arrive early, follow INEC instructions, wait peacefully if you choose to, and report problems through lawful channels.",
-    link: "[Election day guidance link]",
+    note: "Follow official election day instructions.",
   },
   {
     title: "Avoid vote buying and violence",
     body: "Your vote is your voice. Do not sell it, do not intimidate anyone, and do not join violence.",
-    link: "[Civic education link]",
+    note: "Protect your vote and encourage peaceful participation.",
   },
   {
     title: "Follow official INEC updates",
     body: "Rely on official INEC channels for dates, deadlines, voter processes, and polling information.",
-    link: "[Official INEC updates link]",
+    note: "Use official channels for dates, deadlines, and process changes.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function VoterInfoPage() {
               {step.body}
             </p>
             <p className="mt-4 rounded-md border border-dashed border-bayelsa-green/35 bg-bayelsa-palm px-3 py-2 text-sm font-semibold text-bayelsa-deep">
-              {step.link}
+              {step.note}
             </p>
           </article>
         ))}
