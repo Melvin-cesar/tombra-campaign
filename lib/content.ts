@@ -44,17 +44,30 @@ export const newsItems = [
   {
     title: "Tombra Mohammed Meets Community Leaders Across Bayelsa West",
     tag: "Community",
-    date: "Update placeholder",
+    meta: "Campaign note",
+    imageSrc: "/campaign/community-leaders-meeting.jpg",
+    imageAlt:
+      "Tombra Mohammed and supporters meeting with community leaders indoors",
+    summary:
+      "Community conversations are shaping the campaign's priorities for Sagbama, Ekeremor, and the wider Bayelsa West district.",
   },
   {
     title: "Campaign Focuses on Jobs and Better Representation",
     tag: "Agenda",
-    date: "Update placeholder",
+    meta: "Agenda focus",
+    imageSrc: "/campaign/community-walk.jpg",
+    imageAlt: "Tombra Mohammed walking through a community with supporters",
+    summary:
+      "The campaign message centers on practical job opportunities, stronger constituency service, and leadership that keeps reporting back.",
   },
   {
     title: "Women and Youth Participation at the Heart of the Movement",
     tag: "Mobilisation",
-    date: "Update placeholder",
+    meta: "Mobilisation",
+    imageSrc: "/campaign/women-community-visit.jpg",
+    imageAlt: "Tombra Mohammed smiling with women during a community visit",
+    summary:
+      "Women, young people, traders, and local volunteers remain central to the campaign's grassroots organizing work.",
   },
 ];
 
