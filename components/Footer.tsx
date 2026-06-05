@@ -32,10 +32,10 @@ export function Footer() {
         <div>
           <p className="font-bold">Contact</p>
           <div className="mt-3 grid gap-2 text-sm text-white/76">
-            <p>Phone: [Campaign phone]</p>
-            <p>WhatsApp: [WhatsApp number]</p>
-            <p>Email: [Campaign email]</p>
-            <p>Social: [Facebook] [X] [Instagram] [TikTok]</p>
+            <p>Phone: To be announced</p>
+            <p>WhatsApp: To be announced</p>
+            <p>Email: To be announced</p>
+            <p>Social: Official channels coming soon</p>
           </div>
         </div>
       </div>
