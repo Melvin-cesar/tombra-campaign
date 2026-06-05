@@ -1,6 +1,6 @@
 import { agendaPillars, newsItems } from "@/lib/content";
 import { ButtonLink } from "@/components/ButtonLink";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
 
 export default function HomePage() {
@@ -27,10 +27,14 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </div>
-          <PlaceholderImage
-            title="Bayelsa West campaign photo"
-            label="Replace with verified campaign photography from Sagbama, Ekeremor, waterways, markets, schools, and community meetings."
+          <CampaignImage
+            src="/campaign/tombra-portrait.jpg"
+            alt="Tombra Mohammed smiling in a bright patterned outfit"
+            title="Tombra Mohammed"
+            label="Young Progressives Party candidate for Bayelsa West."
             className="min-h-[360px] fade-in"
+            imageClassName="object-[62%_center]"
+            priority
           />
         </div>
       </section>
@@ -64,9 +68,11 @@ export default function HomePage() {
         tone="palm"
       >
         <div className="grid gap-8 md:grid-cols-[0.95fr_1.05fr]">
-          <PlaceholderImage
+          <CampaignImage
+            src="/campaign/community-walk.jpg"
+            alt="Tombra Mohammed walking through a community with supporters"
             title="Community listening"
-            label="Placeholder for meetings with women, youth, traders, chiefs, and community leaders."
+            label="Showing up in communities and hearing directly from residents."
           />
           <div className="space-y-5 text-base leading-7 text-slate-700">
             <p>
