@@ -10,6 +10,16 @@ type CampaignImageProps = {
   priority?: boolean;
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+function withBasePath(src: string) {
+  if (!basePath || !src.startsWith("/") || src.startsWith(`${basePath}/`)) {
+    return src;
+  }
+
+  return `${basePath}${src}`;
+}
+
 export function CampaignImage({
   src,
   alt,
@@ -19,12 +29,14 @@ export function CampaignImage({
   imageClassName = "",
   priority = false,
 }: CampaignImageProps) {
+  const imageSrc = withBasePath(src);
+
   return (
     <figure
       className={`relative min-h-64 overflow-hidden rounded-lg bg-bayelsa-deep shadow-soft ${className}`}
     >
       <Image
-        src={src}
+        src={imageSrc}
         alt={alt}
         fill
         priority={priority}
