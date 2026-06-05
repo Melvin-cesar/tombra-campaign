@@ -1,10 +1,10 @@
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
 
-const placeholders = [
-  "[Add verified education background here]",
-  "[Add verified leadership record here]",
-  "[Add verified community service record here]",
+const profileNotes = [
+  "Verified education background will be added after campaign review.",
+  "Confirmed leadership and public service details will be published here.",
+  "Community service notes will be kept factual and easy to verify.",
 ];
 
 export default function AboutPage() {
@@ -17,9 +17,13 @@ export default function AboutPage() {
         tone="palm"
       >
         <div className="grid gap-8 md:grid-cols-[0.95fr_1.05fr]">
-          <PlaceholderImage
+          <CampaignImage
+            alt="Tombra Mohammed smiling in a bright patterned outfit"
+            className="min-h-80"
+            imageClassName="object-[62%_center]"
+            label="Young Progressives Party candidate for Bayelsa West."
+            src="/campaign/tombra-portrait.jpg"
             title="Candidate portrait"
-            label="Replace with verified portrait or campaign field photo."
           />
           <div className="space-y-5 text-base leading-7 text-slate-700">
             <p>
@@ -28,9 +32,9 @@ export default function AboutPage() {
               and community life when those materials are ready.
             </p>
             <div className="grid gap-3">
-              {placeholders.map((item) => (
+              {profileNotes.map((item) => (
                 <div
-                  className="rounded-md border border-dashed border-bayelsa-green/40 bg-white p-4 text-sm font-semibold text-bayelsa-deep"
+                  className="rounded-md border border-bayelsa-green/30 bg-white p-4 text-sm font-semibold text-bayelsa-deep"
                   key={item}
                 >
                   {item}
@@ -51,8 +55,8 @@ export default function AboutPage() {
             <div className="rounded-lg bg-bayelsa-palm p-5" key={item}>
               <p className="text-xl font-black text-bayelsa-deep">{item}</p>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Add verified local story, community detail, or campaign note
-                here.
+                Local priorities, community notes, and campaign updates will
+                be documented here as verified materials are approved.
               </p>
             </div>
           ))}
@@ -84,13 +88,19 @@ export default function AboutPage() {
         intro="Community meetings, ward conversations, youth mobilisation, women organisers, and direct feedback from Sagbama and Ekeremor should shape the campaign as it grows."
       >
         <div className="grid gap-4 md:grid-cols-2">
-          <PlaceholderImage
+          <CampaignImage
+            alt="Tombra Mohammed and supporters meeting with community leaders indoors"
+            className="min-h-72"
+            label="Listening sessions and community leadership conversations."
+            src="/campaign/community-leaders-meeting.jpg"
             title="Ward conversation"
-            label="Placeholder for people sitting together in a local meeting."
           />
-          <PlaceholderImage
+          <CampaignImage
+            alt="Tombra Mohammed smiling with women during a community visit"
+            className="min-h-72"
+            label="Grassroots outreach with women, young people, and local volunteers."
+            src="/campaign/women-community-visit.jpg"
             title="Market and youth outreach"
-            label="Placeholder for traders, young people, and community volunteers."
           />
         </div>
       </Section>
