@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/components/ButtonLink";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
-import { newsItems } from "@/lib/content";
+import { campaignPhotos, newsItems } from "@/lib/content";
 
 export default function MediaPage() {
   return (
@@ -44,19 +44,16 @@ export default function MediaPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Gallery" title="Photo Gallery Placeholders" tone="palm">
+      <Section eyebrow="Gallery" title="Campaign Photo Gallery" tone="palm">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "Community meeting",
-            "Women and traders",
-            "Youth mobilisation",
-            "Waterway visit",
-          ].map((item) => (
-            <PlaceholderImage
-              className="min-h-52"
-              key={item}
-              title={item}
-              label="Replace with verified campaign photo."
+          {campaignPhotos.map((photo) => (
+            <CampaignImage
+              alt={photo.alt}
+              className="min-h-60"
+              key={photo.src}
+              label={photo.label}
+              src={photo.src}
+              title={photo.title}
             />
           ))}
         </div>
