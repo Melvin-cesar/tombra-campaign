@@ -15,20 +15,29 @@ export default function MediaPage() {
         <div className="grid gap-4 md:grid-cols-3">
           {newsItems.map((item) => (
             <article
-              className="rounded-lg border border-bayelsa-deep/10 bg-white p-5 shadow-sm"
+              className="overflow-hidden rounded-lg border border-bayelsa-deep/10 bg-white shadow-sm"
               key={item.title}
             >
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-bayelsa-green">
-                {item.tag}
-              </p>
-              <h2 className="mt-3 text-xl font-black leading-snug text-bayelsa-deep">
-                {item.title}
-              </h2>
-              <p className="mt-3 text-sm text-slate-600">{item.date}</p>
-              <p className="mt-4 text-sm leading-6 text-slate-700">
-                Add verified campaign update, date, location, speaker quotes,
-                and photos before publishing.
-              </p>
+              <CampaignImage
+                alt={item.imageAlt}
+                className="min-h-48 rounded-none shadow-none"
+                imageClassName="object-cover"
+                src={item.imageSrc}
+              />
+              <div className="p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-bayelsa-green">
+                  {item.tag}
+                </p>
+                <h2 className="mt-3 text-xl font-black leading-snug text-bayelsa-deep">
+                  {item.title}
+                </h2>
+                <p className="mt-3 text-sm font-semibold text-slate-600">
+                  {item.meta}
+                </p>
+                <p className="mt-4 text-sm leading-6 text-slate-700">
+                  {item.summary}
+                </p>
+              </div>
             </article>
           ))}
         </div>
@@ -36,10 +45,10 @@ export default function MediaPage() {
 
       <Section eyebrow="Press" title="Press Releases">
         <div className="rounded-lg border border-dashed border-bayelsa-green/35 bg-bayelsa-palm p-6 text-bayelsa-deep">
-          <p className="font-black">[Add press release archive here]</p>
+          <p className="font-black">Official campaign statements</p>
           <p className="mt-2 text-sm leading-6">
-            Include verified release titles, publication dates, downloadable
-            PDFs, and named campaign media contact when ready.
+            Press releases and formal announcements will be posted here after
+            they are cleared for public release by the campaign team.
           </p>
         </div>
       </Section>
@@ -59,23 +68,25 @@ export default function MediaPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Video" title="Video Gallery Placeholders">
+      <Section eyebrow="Video" title="Campaign Videos Coming Soon">
         <div className="grid gap-4 md:grid-cols-3">
-          {["Town hall clip", "Candidate message", "Community voices"].map(
-            (item) => (
-              <div
-                className="rounded-lg border border-bayelsa-deep/10 bg-white p-5 shadow-sm"
-                key={item}
-              >
-                <div className="flex aspect-video items-center justify-center rounded-md bg-bayelsa-deep text-sm font-black text-white">
-                  Video placeholder
-                </div>
-                <p className="mt-4 text-lg font-black text-bayelsa-deep">
-                  {item}
-                </p>
+          {[
+            "Town hall clips",
+            "Candidate messages",
+            "Community voices",
+          ].map((item) => (
+            <div
+              className="rounded-lg border border-bayelsa-deep/10 bg-white p-5 shadow-sm"
+              key={item}
+            >
+              <div className="flex aspect-video items-center justify-center rounded-md bg-bayelsa-deep px-5 text-center text-sm font-black text-white">
+                Video coming soon
               </div>
-            )
-          )}
+              <p className="mt-4 text-lg font-black text-bayelsa-deep">
+                {item}
+              </p>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -83,12 +94,12 @@ export default function MediaPage() {
         <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="text-base leading-7 text-white/82">
-              [Download campaign media kit placeholder]. Add approved logo
-              files, candidate photos, party details, biography note, contact
-              information, and usage guidance.
+              Approved campaign photos, biography notes, party details, and
+              press contact information will be collected here for journalists
+              and community media partners.
             </p>
             <p className="mt-4 text-sm font-semibold text-bayelsa-gold">
-              Press contact: [Press contact placeholder]
+              Press contact: To be announced
             </p>
           </div>
           <ButtonLink href="/contact" variant="light">
