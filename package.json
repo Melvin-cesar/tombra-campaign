@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "generate:og": "node scripts/generate-og-image.mjs",
+    "build": "node scripts/generate-og-image.mjs && next build --webpack",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
@@ -15,7 +16,8 @@
   "dependencies": {
     "next": "16.2.7",
     "react": "19.2.7",
-    "react-dom": "19.2.7"
+    "react-dom": "19.2.7",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@next/swc-wasm-nodejs": "^16.2.7",
