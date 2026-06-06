@@ -1,3 +1,5 @@
+import { campaignDetails } from "@/lib/campaignDetails";
+
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -42,12 +44,12 @@ export const agendaPillars = [
 
 export const newsItems = [
   {
-    title: "Tombra Mohammed Meets Community Leaders Across Bayelsa West",
+    title: `${campaignDetails.candidateName} Meets Community Leaders Across Bayelsa West`,
     tag: "Community",
     meta: "Campaign note",
     imageSrc: "/campaign/community-leaders-meeting.jpg",
     imageAlt:
-      "Tombra Mohammed and supporters meeting with community leaders indoors",
+      `${campaignDetails.candidateName} and supporters meeting with community leaders indoors`,
     summary:
       "Community conversations are shaping the campaign's priorities for Sagbama, Ekeremor, and the wider Bayelsa West district.",
   },
@@ -56,7 +58,7 @@ export const newsItems = [
     tag: "Agenda",
     meta: "Agenda focus",
     imageSrc: "/campaign/community-walk.jpg",
-    imageAlt: "Tombra Mohammed walking through a community with supporters",
+    imageAlt: `${campaignDetails.candidateName} walking through a community with supporters`,
     summary:
       "The campaign message centers on practical job opportunities, stronger constituency service, and leadership that keeps reporting back.",
   },
@@ -65,7 +67,7 @@ export const newsItems = [
     tag: "Mobilisation",
     meta: "Mobilisation",
     imageSrc: "/campaign/women-community-visit.jpg",
-    imageAlt: "Tombra Mohammed smiling with women during a community visit",
+    imageAlt: `${campaignDetails.candidateName} smiling with women during a community visit`,
     summary:
       "Women, young people, traders, and local volunteers remain central to the campaign's grassroots organizing work.",
   },
@@ -74,38 +76,38 @@ export const newsItems = [
 export const campaignPhotos = [
   {
     src: "/campaign/tombra-portrait.jpg",
-    alt: "Tombra Mohammed smiling in a bright patterned outfit",
-    title: "Tombra Mohammed",
+    alt: `${campaignDetails.candidateName} smiling in a bright patterned outfit`,
+    title: campaignDetails.candidateName,
     label: "Official campaign portrait.",
   },
   {
     src: "/campaign/campaign-team-banner.jpg",
-    alt: "Tombra Mohammed with campaign supporters holding a YPP banner",
+    alt: `${campaignDetails.candidateName} with campaign supporters holding a YPP banner`,
     title: "Campaign team",
     label: "Supporters gather with Tombra Mohammed campaign materials.",
   },
   {
     src: "/campaign/community-walk.jpg",
-    alt: "Tombra Mohammed walking through a community with supporters",
+    alt: `${campaignDetails.candidateName} walking through a community with supporters`,
     title: "Community walk",
     label: "Listening and meeting people where they are.",
   },
   {
     src: "/campaign/women-community-visit.jpg",
-    alt: "Tombra Mohammed smiling with women during a community visit",
+    alt: `${campaignDetails.candidateName} smiling with women during a community visit`,
     title: "Women and community visit",
     label: "Conversations with women and local residents.",
   },
   {
     src: "/campaign/community-leaders-meeting.jpg",
-    alt: "Tombra Mohammed and supporters meeting with community leaders indoors",
+    alt: `${campaignDetails.candidateName} and supporters meeting with community leaders indoors`,
     title: "Community leaders meeting",
     label: "Engagement with community leaders and campaign supporters.",
   },
   {
     src: "/campaign/ypp-certificate.jpg",
-    alt: "Tombra Mohammed receiving a Young Progressives Party certificate",
-    title: "YPP certificate",
+    alt: `${campaignDetails.candidateName} receiving a ${campaignDetails.party} certificate`,
+    title: "Party certificate",
     label: "Campaign documentation and party engagement.",
   },
 ];

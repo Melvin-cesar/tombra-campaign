@@ -1,6 +1,10 @@
 import { ConsentField, SelectField, TextField } from "@/components/FormFields";
+import { NetlifyForm } from "@/components/NetlifyForm";
 import { Section } from "@/components/Section";
+import { campaignDetails } from "@/lib/campaignDetails";
 import { volunteerOptions } from "@/lib/content";
+
+const consentText = `I agree that the ${campaignDetails.candidateName} campaign may contact me using the information I provided.`;
 
 export default function VolunteerPage() {
   return (
@@ -23,8 +27,12 @@ export default function VolunteerPage() {
       </Section>
 
       <Section title="Volunteer Form">
-        <form className="grid gap-5 rounded-lg border border-slate-200 bg-white p-5 shadow-soft sm:p-6">
-          {/* TODO: Connect this front-end form to volunteer database and consent-safe messaging workflow. */}
+        <NetlifyForm
+          className="grid gap-5 rounded-lg border border-slate-200 bg-white p-5 shadow-soft sm:p-6"
+          errorMessage="Sorry, your volunteer form could not be sent. Please check your connection and try again."
+          name="volunteer-form"
+          successMessage="Thank you. Your volunteer details have been received."
+        >
           <div className="grid gap-5 md:grid-cols-2">
             <TextField label="Full name" name="fullName" required />
             <TextField label="Phone number" name="phone" type="tel" required />
@@ -50,17 +58,14 @@ export default function VolunteerPage() {
               required
             />
           </div>
-          <ConsentField
-            label="I agree that the campaign may contact me about volunteer activities."
-            name="consent"
-          />
+          <ConsentField label={consentText} name="consent" />
           <button
             type="submit"
             className="min-h-12 rounded-md bg-bayelsa-gold px-5 py-3 text-sm font-black text-bayelsa-deep transition hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-bayelsa-gold/40 sm:w-fit"
           >
             Join the Movement
           </button>
-        </form>
+        </NetlifyForm>
       </Section>
     </>
   );

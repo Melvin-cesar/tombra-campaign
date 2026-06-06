@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { campaignDetails } from "@/lib/campaignDetails";
 import { navItems } from "@/lib/content";
 
 export function Header() {
@@ -21,10 +22,10 @@ export function Header() {
           </span>
           <span className="min-w-0">
             <span className="block truncate text-sm font-black text-bayelsa-deep sm:text-base">
-              Tombra Mohammed
+              {campaignDetails.candidateName}
             </span>
             <span className="block truncate text-xs font-semibold text-slate-600">
-              YPP | Bayelsa West
+              {campaignDetails.party} | {campaignDetails.constituency}
             </span>
           </span>
         </Link>

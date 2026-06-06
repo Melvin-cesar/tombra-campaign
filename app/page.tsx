@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import { agendaPillars, newsItems } from "@/lib/content";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
+import { campaignDetails } from "@/lib/campaignDetails";
+
+export const metadata: Metadata = {
+  title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
+  description:
+    "Official campaign website of Tombra Mohammed for Bayelsa West Senate. Jobs, better representation, and grassroots leadership for Sagbama and Ekeremor.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -11,14 +22,15 @@ export default function HomePage() {
         <div className="relative mx-auto grid min-h-[calc(88svh-73px)] max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="rise-in">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-bayelsa-gold">
-              Tombra Jennifer Mohammed | YPP
+              Tombra Jennifer Mohammed | {campaignDetails.party}
             </p>
             <h1 className="mt-4 max-w-4xl text-5xl font-black leading-[0.98] sm:text-6xl lg:text-7xl">
               A Stronger Voice for Bayelsa West
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/86 sm:text-xl">
-              Tombra Mohammed is running to bring jobs, better representation,
-              and people-first leadership to Sagbama and Ekeremor.
+              {campaignDetails.candidateName} is running to bring jobs, better
+              representation, and people-first leadership to Sagbama and
+              Ekeremor.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/volunteer">Join the Movement</ButtonLink>
@@ -30,8 +42,8 @@ export default function HomePage() {
           <CampaignImage
             src="/campaign/tombra-portrait.jpg"
             alt="Tombra Mohammed smiling in a bright patterned outfit"
-            title="Tombra Mohammed"
-            label="Young Progressives Party candidate for Bayelsa West."
+            title={campaignDetails.candidateName}
+            label={`${campaignDetails.party} candidate for ${campaignDetails.constituency}.`}
             className="min-h-[360px] fade-in"
             imageClassName="object-[62%_center]"
             priority

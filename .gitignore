@@ -2,6 +2,7 @@
 node_modules
 out
 dist
+tsconfig.tsbuildinfo
 .DS_Store
 .env*
 !.env.example

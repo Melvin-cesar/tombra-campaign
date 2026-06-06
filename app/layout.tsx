@@ -1,13 +1,47 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { Analytics } from "@/components/Analytics";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import {
+  absoluteUrl,
+  campaignDetails,
+  campaignSiteUrl,
+} from "@/lib/campaignDetails";
 
 export const metadata: Metadata = {
   title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
   description:
-    "Campaign website for Tombra Jennifer Mohammed, YPP senatorial candidate for Bayelsa West Senatorial District.",
+    "Official campaign website of Tombra Mohammed for Bayelsa West Senate. Jobs, better representation, and grassroots leadership for Sagbama and Ekeremor.",
+  metadataBase: new URL(campaignSiteUrl),
+  icons: {
+    icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
+    description:
+      "Official campaign website of Tombra Mohammed for Bayelsa West Senate. Jobs, better representation, and grassroots leadership for Sagbama and Ekeremor.",
+    url: campaignSiteUrl,
+    siteName: `${campaignDetails.candidateName} Campaign`,
+    images: [
+      {
+        url: absoluteUrl("/campaign/campaign-team-banner.jpg"),
+        width: 560,
+        height: 420,
+        alt: `${campaignDetails.candidateName} campaign supporters`,
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
+    description:
+      "Official campaign website of Tombra Mohammed for Bayelsa West Senate. Jobs, better representation, and grassroots leadership for Sagbama and Ekeremor.",
+    images: [absoluteUrl("/campaign/campaign-team-banner.jpg")],
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +61,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <Analytics />
         <div className="fixed bottom-4 right-4 z-50 hidden sm:block">
           <Link
             href="/volunteer"
