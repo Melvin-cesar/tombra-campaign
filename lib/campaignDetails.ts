@@ -11,7 +11,7 @@ export const campaignDetails = {
   twitterX: "",
   tiktok: "",
   youtube: "",
-  finalDomain: "https://melvin-cesar.github.io/tombra-campaign",
+  finalDomain: "https://tombra2027.com",
 };
 
 export const campaignSiteUrl = campaignDetails.finalDomain.replace(/\/$/, "");
