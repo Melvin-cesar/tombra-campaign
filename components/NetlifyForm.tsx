@@ -11,6 +11,16 @@ type NetlifyFormProps = {
   errorMessage: string;
 };
 
+async function submitEncodedForm(url: string, formData: FormData) {
+  return fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(
+      formData as unknown as Record<string, string>
+    ).toString(),
+  });
+}
+
 export function NetlifyForm({
   name,
   children,
@@ -40,23 +50,27 @@ export function NetlifyForm({
       const formData = new FormData(form);
       formData.set("form-name", name);
 
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(
-          formData as unknown as Record<string, string>
-        ).toString(),
-      });
+      const currentPath = window.location.pathname || "/";
+      const endpoints = Array.from(new Set([currentPath, "/"]));
+      const responses = [];
 
-      if (!response.ok) {
-        const responseText = await response.text();
-        throw new Error(
-          `Netlify form submission failed with ${response.status} ${response.statusText}: ${responseText.slice(0, 180)}`
-        );
+      for (const endpoint of endpoints) {
+        const response = await submitEncodedForm(endpoint, formData);
+        responses.push(response);
+
+        if (response.ok) {
+          form.reset();
+          setStatus("success");
+          return;
+        }
       }
 
-      form.reset();
-      setStatus("success");
+      const lastResponse = responses[responses.length - 1];
+      const responseText = lastResponse ? await lastResponse.text() : "";
+
+      throw new Error(
+        `Netlify form submission failed with ${lastResponse?.status || "no"} ${lastResponse?.statusText || "response"}: ${responseText.slice(0, 180)}`
+      );
     } catch (error) {
       if (process.env.NODE_ENV !== "production") {
         setDebugMessage(error instanceof Error ? error.message : String(error));
@@ -70,6 +84,7 @@ export function NetlifyForm({
       className={className}
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      action="/"
       id={id}
       method="POST"
       name={name}

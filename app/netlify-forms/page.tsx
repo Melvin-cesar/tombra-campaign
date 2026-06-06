@@ -46,6 +46,7 @@ export default function NetlifyFormsPage() {
     <main className="hidden" aria-hidden="true">
       {formBlueprints.map((form) => (
         <form
+          action="/"
           data-netlify="true"
           method="POST"
           name={form.name}
