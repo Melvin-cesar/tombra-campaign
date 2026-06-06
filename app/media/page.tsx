@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ButtonLink";
 import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
+import { contactItems } from "@/lib/campaignDetails";
 import { campaignPhotos, newsItems } from "@/lib/content";
 
 export default function MediaPage() {
@@ -98,9 +99,11 @@ export default function MediaPage() {
               press contact information will be collected here for journalists
               and community media partners.
             </p>
-            <p className="mt-4 text-sm font-semibold text-bayelsa-gold">
-              Press contact: To be announced
-            </p>
+            {contactItems.length ? (
+              <p className="mt-4 text-sm font-semibold text-bayelsa-gold">
+                Press contact: {contactItems[0].value}
+              </p>
+            ) : null}
           </div>
           <ButtonLink href="/contact" variant="light">
             Contact Press Team

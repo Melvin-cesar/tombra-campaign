@@ -1,5 +1,6 @@
 import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
+import { campaignDetails } from "@/lib/campaignDetails";
 
 const profileNotes = [
   "Verified education background will be added after campaign review.",
@@ -12,8 +13,8 @@ export default function AboutPage() {
     <>
       <Section
         eyebrow="About"
-        title="Meet Tombra Mohammed"
-        intro="Tombra Jennifer Mohammed, also known as Tombra Mohammed, is the Young Progressives Party candidate presenting herself to serve Bayelsa West Senatorial District."
+        title={`Meet ${campaignDetails.candidateName}`}
+        intro={`Tombra Jennifer Mohammed, also known as ${campaignDetails.candidateName}, is the ${campaignDetails.party} candidate presenting herself to serve ${campaignDetails.constituency}.`}
         tone="palm"
       >
         <div className="grid gap-8 md:grid-cols-[0.95fr_1.05fr]">
@@ -21,7 +22,7 @@ export default function AboutPage() {
             alt="Tombra Mohammed smiling in a bright patterned outfit"
             className="min-h-80"
             imageClassName="object-[62%_center]"
-            label="Young Progressives Party candidate for Bayelsa West."
+            label={`${campaignDetails.party} candidate for ${campaignDetails.constituency}.`}
             src="/campaign/tombra-portrait.jpg"
             title="Candidate portrait"
           />

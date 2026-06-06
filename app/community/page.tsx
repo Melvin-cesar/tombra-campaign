@@ -1,7 +1,11 @@
 import { ConsentField, SelectField, TextAreaField, TextField } from "@/components/FormFields";
 import { CampaignImage } from "@/components/CampaignImage";
+import { NetlifyForm } from "@/components/NetlifyForm";
 import { Section } from "@/components/Section";
+import { campaignDetails } from "@/lib/campaignDetails";
 import { issueCategories } from "@/lib/content";
+
+const consentText = `I agree that the ${campaignDetails.candidateName} campaign may contact me using the information I provided.`;
 
 const lgas = [
   {
@@ -66,11 +70,13 @@ export default function CommunityPage() {
         title="Community Listening Form"
         intro="Tell the campaign what your ward or community needs attention on."
       >
-        <form
-          id="listening-form"
+        <NetlifyForm
           className="grid gap-5 rounded-lg border border-slate-200 bg-white p-5 shadow-soft sm:p-6"
+          errorMessage="Sorry, your community concern could not be sent. Please check your connection and try again."
+          id="listening-form"
+          name="community-concern-form"
+          successMessage="Thank you. Your community concern has been received."
         >
-          {/* TODO: Connect this front-end form to the campaign CRM or secure backend endpoint. */}
           <div className="grid gap-5 md:grid-cols-2">
             <TextField label="Full name" name="fullName" required />
             <TextField label="Phone number" name="phone" type="tel" required />
@@ -95,17 +101,14 @@ export default function CommunityPage() {
             placeholder="Describe the issue in simple terms."
             required
           />
-          <ConsentField
-            label="I agree that the campaign may contact me about this issue."
-            name="consent"
-          />
+          <ConsentField label={consentText} name="consent" />
           <button
             type="submit"
             className="min-h-12 rounded-md bg-bayelsa-gold px-5 py-3 text-sm font-black text-bayelsa-deep transition hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-bayelsa-gold/40 sm:w-fit"
           >
             Submit Community Concern
           </button>
-        </form>
+        </NetlifyForm>
       </Section>
     </>
   );
