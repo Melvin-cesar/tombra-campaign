@@ -9,7 +9,7 @@ import {
   campaignSiteUrl,
 } from "@/lib/campaignDetails";
 
-const socialPreviewImageUrl = "https://tombra2027.com/og-image-v3.png";
+const socialPreviewImageUrl = "https://tombra2027.com/og-image-whatsapp.jpg";
 
 export const metadata: Metadata = {
   title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       {
         url: socialPreviewImageUrl,
         secureUrl: socialPreviewImageUrl,
-        type: "image/png",
+        type: "image/jpeg",
         width: 1200,
         height: 630,
         alt: `${campaignDetails.candidateName} campaign preview`,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       {
         url: socialPreviewImageUrl,
         secureUrl: socialPreviewImageUrl,
-        type: "image/png",
+        type: "image/jpeg",
         width: 1200,
         height: 630,
         alt: `${campaignDetails.candidateName} campaign preview`,
