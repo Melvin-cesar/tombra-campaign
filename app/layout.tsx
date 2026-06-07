@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: `${campaignDetails.candidateName} Campaign`,
     images: [
       {
-        url: absoluteUrl("/og-image.png?v=2"),
+        url: absoluteUrl("/og-image.png?v=3"),
         width: 1200,
         height: 630,
         alt: `${campaignDetails.candidateName} campaign preview`,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
     description:
       "Official campaign website of Tombra Mohammed for Bayelsa West Senate. Jobs, better representation, and grassroots leadership for Sagbama and Ekeremor.",
-    images: [absoluteUrl("/og-image.png?v=2")],
+    images: [absoluteUrl("/og-image.png?v=3")],
   },
 };
 

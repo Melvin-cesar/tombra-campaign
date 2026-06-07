@@ -8,6 +8,7 @@ on:
       - ".github/workflows/generate-og-image.yml"
       - "package.json"
       - "scripts/generate-og-image.mjs"
+      - "public/campaign/tombra-portrait-high-res.jpg"
       - "public/campaign/tombra-portrait.jpg"
   workflow_dispatch:
 
