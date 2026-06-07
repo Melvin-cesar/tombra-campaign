@@ -5,10 +5,11 @@ import { Analytics } from "@/components/Analytics";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import {
-  absoluteUrl,
   campaignDetails,
   campaignSiteUrl,
 } from "@/lib/campaignDetails";
+
+const socialPreviewImageUrl = "https://tombra2027.com/og-image-v3.png";
 
 export const metadata: Metadata = {
   title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
@@ -26,7 +27,9 @@ export const metadata: Metadata = {
     siteName: `${campaignDetails.candidateName} Campaign`,
     images: [
       {
-        url: absoluteUrl("/og-image.png?v=3"),
+        url: socialPreviewImageUrl,
+        secureUrl: socialPreviewImageUrl,
+        type: "image/png",
         width: 1200,
         height: 630,
         alt: `${campaignDetails.candidateName} campaign preview`,
@@ -40,7 +43,16 @@ export const metadata: Metadata = {
     title: "Tombra Mohammed | A Stronger Voice for Bayelsa West",
     description:
       "Official campaign website of Tombra Mohammed for Bayelsa West Senate. Jobs, better representation, and grassroots leadership for Sagbama and Ekeremor.",
-    images: [absoluteUrl("/og-image.png?v=3")],
+    images: [
+      {
+        url: socialPreviewImageUrl,
+        secureUrl: socialPreviewImageUrl,
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: `${campaignDetails.candidateName} campaign preview`,
+      },
+    ],
   },
 };
 
