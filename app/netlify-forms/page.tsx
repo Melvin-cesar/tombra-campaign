@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 const formBlueprints = [
   {
     name: "volunteer-form",
+    formType: "volunteer",
     fields: [
       "fullName",
       "phone",
@@ -24,6 +25,7 @@ const formBlueprints = [
   },
   {
     name: "community-concern-form",
+    formType: "community-concern",
     fields: [
       "fullName",
       "phone",
@@ -37,7 +39,8 @@ const formBlueprints = [
   },
   {
     name: "contact-form",
-    fields: ["fullName", "phone", "email", "community", "message", "consent"],
+    formType: "contact",
+    fields: ["fullName", "phone", "email", "reason", "message", "consent"],
   },
 ];
 
@@ -54,6 +57,10 @@ export default function NetlifyFormsPage() {
           key={form.name}
         >
           <input type="hidden" name="form-name" value={form.name} />
+          <input type="hidden" name="sourceSite" value="tombra2027.com" />
+          <input type="hidden" name="campaign" value="Tombra 2027" />
+          <input type="hidden" name="formType" value={form.formType} />
+          <input type="hidden" name="submittedFrom" value="" />
           <input name="bot-field" />
           {form.fields.map((field) => (
             <input key={field} name={field} />
