@@ -71,7 +71,7 @@ export default function ContactPage() {
             <TextField label="Full name" name="fullName" required />
             <TextField label="Phone number" name="phone" type="tel" required />
             <TextField label="Email optional" name="email" type="email" />
-            <TextField label="Community or organisation" name="community" />
+            <TextField label="Reason for message" name="reason" />
           </div>
           <TextAreaField
             label="Message"

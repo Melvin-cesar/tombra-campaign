@@ -39,6 +39,17 @@ out
 
 The same settings are also stored in `netlify.toml`.
 
+## Campaign Submissions Dashboard
+
+Netlify Forms stores the campaign submissions and should remain the form capture and backup layer. Airtable is recommended as the campaign-friendly dashboard where the team can view volunteers, community concerns, and contact messages without using Netlify day to day.
+
+Make can automate the handoff from Netlify Forms to Airtable through a webhook and routed Airtable record creation.
+
+Setup docs:
+
+- `docs/AIRTABLE_DASHBOARD_SETUP.md`
+- `docs/MAKE_NETLIFY_TO_AIRTABLE_SETUP.md`
+
 ## Campaign Details
 
 Update campaign contact details, social links, and the final public domain in:
@@ -77,4 +88,3 @@ NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN=
 ```
 
 Add either value in Netlify Site settings under Environment variables, then redeploy.
-

@@ -2,6 +2,12 @@
 
 import { FormEvent, ReactNode, useState } from "react";
 
+const formTypes: Record<string, string> = {
+  "volunteer-form": "volunteer",
+  "community-concern-form": "community-concern",
+  "contact-form": "contact",
+};
+
 type NetlifyFormProps = {
   name: string;
   children: ReactNode;
@@ -49,6 +55,7 @@ export function NetlifyForm({
     try {
       const formData = new FormData(form);
       formData.set("form-name", name);
+      formData.set("submittedFrom", window.location.pathname || "/");
 
       const currentPath = window.location.pathname || "/";
       const endpoints = Array.from(new Set([currentPath, "/"]));
@@ -92,6 +99,10 @@ export function NetlifyForm({
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value={name} />
+      <input type="hidden" name="sourceSite" value="tombra2027.com" />
+      <input type="hidden" name="campaign" value="Tombra 2027" />
+      <input type="hidden" name="formType" value={formTypes[name] || name} />
+      <input type="hidden" name="submittedFrom" value="" />
       <p className="hidden">
         <label>
           Do not fill this out if you are human:
