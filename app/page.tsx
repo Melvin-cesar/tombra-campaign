@@ -3,6 +3,7 @@ import { agendaPillars, newsItems } from "@/lib/content";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
+import { YouTubeShortPlayer } from "@/components/YouTubeShortPlayer";
 import { campaignDetails } from "@/lib/campaignDetails";
 
 export const metadata: Metadata = {
@@ -57,29 +58,18 @@ export default function HomePage() {
         intro="Her message is one of hope, responsibility, and a call to get representation right for every community across Bayelsa West."
         tone="palm"
       >
-        <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-          <div className="max-w-xl text-base leading-7 text-slate-700">
+        <div className="grid gap-7 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+          <div className="max-w-xl text-base leading-7 text-slate-700 md:pt-2">
             <p>
               Tombra speaks from a place of personal connection to Bayelsa, the
               history that shaped the state, and the urgent need for communities
               in Bayelsa West to experience development with dignity.
             </p>
           </div>
-          <div className="mx-auto w-full max-w-[360px]">
-            <div className="rounded-[2rem] bg-bayelsa-deep p-2 shadow-soft">
-              <div className="overflow-hidden rounded-[1.5rem] bg-black">
-                <iframe
-                  className="aspect-[9/16] w-full border-0"
-                  src="https://www.youtube.com/embed/7j1y-es653E"
-                  title="A Message from Tombra Mohammed | Tombra 2027"
-                  loading="lazy"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </div>
+          <YouTubeShortPlayer
+            videoId="7j1y-es653E"
+            title="A Message from Tombra Mohammed | Tombra 2027"
+          />
         </div>
       </Section>
 
