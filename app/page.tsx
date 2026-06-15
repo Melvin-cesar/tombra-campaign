@@ -55,17 +55,14 @@ export default function HomePage() {
       <Section
         eyebrow="Candidate message"
         title="A Message from Tombra"
-        intro="Her message is one of hope, responsibility, and a call to get representation right for every community across Bayelsa West."
+        intro="Watch Tombra Mohammed share a personal message to Bayelsans and the people of Bayelsa West."
         tone="palm"
       >
-        <div className="grid gap-7 md:grid-cols-[0.9fr_1.1fr] md:items-start">
-          <div className="max-w-xl text-base leading-7 text-slate-700 md:pt-2">
-            <p>
-              Tombra speaks from a place of personal connection to Bayelsa, the
-              history that shaped the state, and the urgent need for communities
-              in Bayelsa West to experience development with dignity.
-            </p>
-          </div>
+        <div className="grid gap-5 md:grid-cols-[0.75fr_1.25fr] md:items-start">
+          <p className="max-w-md text-base leading-7 text-slate-700 md:pt-1">
+            A hopeful call to get representation right for every community
+            across Bayelsa West.
+          </p>
           <YouTubeShortPlayer
             videoId="7j1y-es653E"
             title="A Message from Tombra Mohammed | Tombra 2027"
