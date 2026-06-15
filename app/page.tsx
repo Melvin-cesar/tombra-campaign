@@ -52,6 +52,38 @@ export default function HomePage() {
       </section>
 
       <Section
+        eyebrow="Candidate message"
+        title="A Message from Tombra"
+        intro="Her message is one of hope, responsibility, and a call to get representation right for every community across Bayelsa West."
+        tone="palm"
+      >
+        <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+          <div className="max-w-xl text-base leading-7 text-slate-700">
+            <p>
+              Tombra speaks from a place of personal connection to Bayelsa, the
+              history that shaped the state, and the urgent need for communities
+              in Bayelsa West to experience development with dignity.
+            </p>
+          </div>
+          <div className="mx-auto w-full max-w-[360px]">
+            <div className="rounded-[2rem] bg-bayelsa-deep p-2 shadow-soft">
+              <div className="overflow-hidden rounded-[1.5rem] bg-black">
+                <iframe
+                  className="aspect-[9/16] w-full border-0"
+                  src="https://www.youtube.com/embed/7j1y-es653E"
+                  title="A Message from Tombra Mohammed | Tombra 2027"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section
         eyebrow="Plain purpose"
         title="Bayelsa West deserves leadership that listens, shows up, and fights for real development."
         intro="This campaign is built around the people of Sagbama and Ekeremor: riverine communities, young people looking for work, women carrying local trade, elders asking for dignity, and families who want representation that remembers them after election day."
