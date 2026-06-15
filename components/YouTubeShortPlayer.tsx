@@ -9,7 +9,10 @@ type YouTubeShortPlayerProps = {
 
 export function YouTubeShortPlayer({ videoId, title }: YouTubeShortPlayerProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isFallbackPoster, setIsFallbackPoster] = useState(false);
   const embedUrl = `https://www.youtube.com/embed/${videoId}?playsinline=1&rel=0`;
+  const posterUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+  const fallbackPosterUrl = "/campaign/tombra-portrait.jpg";
 
   return (
     <div className="mx-auto w-full max-w-[340px]">
@@ -31,24 +34,27 @@ export function YouTubeShortPlayer({ videoId, title }: YouTubeShortPlayerProps) 
               onClick={() => setIsLoaded(true)}
               aria-label={`Load video: ${title}`}
             >
-              <span className="absolute inset-0 bg-[linear-gradient(160deg,rgba(7,59,42,0.98),rgba(15,107,63,0.9)_52%,rgba(31,122,140,0.82))]" />
-              <span className="absolute inset-0 bg-[repeating-linear-gradient(125deg,rgba(255,255,255,0.12)_0_1px,transparent_1px_22px)] opacity-70" />
-              <span className="relative flex w-full flex-col justify-between p-6">
-                <span>
-                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-bayelsa-gold">
-                    Candidate video
-                  </span>
-                  <span className="mt-3 block text-3xl font-black leading-tight">
-                    Watch Tombra&apos;s Message
-                  </span>
+              <img
+                src={posterUrl}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+                onError={(event) => {
+                  if (isFallbackPoster) {
+                    return;
+                  }
+
+                  setIsFallbackPoster(true);
+                  event.currentTarget.src = fallbackPosterUrl;
+                }}
+              />
+              <span className="absolute inset-0 bg-gradient-to-t from-bayelsa-deep/86 via-bayelsa-deep/18 to-transparent" />
+              <span className="absolute inset-0 bg-black/10 transition group-hover:bg-black/0" />
+              <span className="relative flex w-full flex-col items-center justify-end gap-5 p-6 text-center">
+                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-bayelsa-gold text-bayelsa-deep shadow-soft transition group-hover:scale-105">
+                  <span className="ml-1 h-0 w-0 border-y-[13px] border-l-[20px] border-y-transparent border-l-bayelsa-deep" />
                 </span>
-                <span className="flex items-center gap-4">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-bayelsa-gold text-bayelsa-deep shadow-sm transition group-hover:scale-105">
-                    <span className="ml-1 h-0 w-0 border-y-[11px] border-l-[17px] border-y-transparent border-l-bayelsa-deep" />
-                  </span>
-                  <span className="text-sm font-bold leading-5 text-white/90">
-                    Tap to load the YouTube player
-                  </span>
+                <span className="text-2xl font-black leading-tight">
+                  Watch Tombra&apos;s Message
                 </span>
               </span>
             </button>
