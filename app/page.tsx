@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { agendaPillars, newsItems } from "@/lib/content";
 import { ButtonLink } from "@/components/ButtonLink";
+import { CampaignVideoPlayer } from "@/components/CampaignVideoPlayer";
 import { CampaignImage } from "@/components/CampaignImage";
 import { Section } from "@/components/Section";
-import { YouTubeShortPlayer } from "@/components/YouTubeShortPlayer";
 import { campaignDetails } from "@/lib/campaignDetails";
 
 export const metadata: Metadata = {
@@ -63,8 +63,9 @@ export default function HomePage() {
             A hopeful call to get representation right for every community
             across Bayelsa West.
           </p>
-          <YouTubeShortPlayer
-            videoId="7j1y-es653E"
+          <CampaignVideoPlayer
+            poster="/campaign/tombra-portrait.jpg"
+            src="/campaign/tombra-message.mp4"
             title="A Message from Tombra Mohammed | Tombra 2027"
           />
         </div>
