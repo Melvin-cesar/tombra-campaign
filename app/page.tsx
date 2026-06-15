@@ -64,7 +64,7 @@ export default function HomePage() {
             across Bayelsa West.
           </p>
           <CampaignVideoPlayer
-            poster="/campaign/tombra-portrait.jpg"
+            poster="/campaign/tombra-message-poster.webp"
             src="/campaign/tombra-message.mp4"
             title="A Message from Tombra Mohammed | Tombra 2027"
           />
