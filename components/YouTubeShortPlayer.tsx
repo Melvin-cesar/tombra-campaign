@@ -10,7 +10,7 @@ type YouTubeShortPlayerProps = {
 export function YouTubeShortPlayer({ videoId, title }: YouTubeShortPlayerProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isFallbackPoster, setIsFallbackPoster] = useState(false);
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?playsinline=1&rel=0`;
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`;
   const posterUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
   const fallbackPosterUrl = "/campaign/tombra-portrait.jpg";
 
@@ -23,7 +23,7 @@ export function YouTubeShortPlayer({ videoId, title }: YouTubeShortPlayerProps) 
               className="aspect-[9/16] w-full border-0"
               src={embedUrl}
               title={title}
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
